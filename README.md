@@ -44,12 +44,12 @@ You need to provide 2 argments(essential) & 1 argments(optional).
 
 When you want to make json file,  
 - `python main.py --path [path of train.txt] --output [path of the json file] --objects [path of obj.names]`  
-- (For example)`python main.py --path ./tutorial/train.txt --output ./train.json --objects ./obj.names`
+- (For example)`python main.py --path ./tutorial/train.txt --output ./tutorial/output/train.json --objects ./tutorial/obj.names`
 
 #### Tips  
 If you want to read json files more clearly, you should use `JQ`!  
 - [JQ Manual](https://stedolan.github.io/jq/manual/)
-- (For example) `cd output`
+- (For example) `cd ./tutorial/output`
 - `jq . train.json > train_jq.json`
 
 ## Contributors
