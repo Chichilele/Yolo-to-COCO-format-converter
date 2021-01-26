@@ -4,20 +4,6 @@ import argparse
 import json
 import numpy as np
 
-#################################################
-# Change the classes depend on your own dataset.#
-# Don't change the list name 'Classes'          #
-#################################################
-
-# Class에 맞게 바꿔줘야함
-classes = [
-"chair",
-"handle",
-"table",
-"button",
-"person",
-]
-
 # Get 'images' and 'annotations' info
 def images_annotations_info(opt):
 
@@ -79,10 +65,16 @@ def images_annotations_info(opt):
 
     return images, annotations
 
+def get_objects(path):
+    with open(path) as f:
+        object_list = f.read().split()
+    
+    return object_list
 
 def get_args():
     parser = argparse.ArgumentParser('Yolo format annotations to COCO dataset format')
     parser.add_argument('-p', '--path', type=str, help='Absolute path for \'train.txt\' or \'test.txt\'')
+    parser.add_argument('--objects', type=str, default='obj.names', help='path for object list')
     parser.add_argument('--output', type=str, help='Name the output json file')
 
     args = parser.parse_args()
@@ -92,6 +84,8 @@ if __name__ == '__main__':
     opt = get_args()
     output_name = opt.output
     output_path = 'output/' + output_name + '.json'
+    classes = get_objects(opt.objects)
+    print(classes)
 
     print("Start!")
 
