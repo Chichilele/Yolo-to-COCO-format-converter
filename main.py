@@ -1,5 +1,5 @@
 from create_annotations import *
-import PIL
+from PIL import Image
 import argparse
 import json
 import numpy as np
