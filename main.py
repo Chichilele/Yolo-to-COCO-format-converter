@@ -28,7 +28,11 @@ def images_annotations_info(opt):
         w, h = Image.open(line).size
 
         # read a label file
-        label_path = line[:-3]+"txt"
+        label_path = line.replace("/images/", "/labels/")
+        label_path = label_path.split('.')
+        label_path[-1] = 'txt'
+        label_path = '.'.join(label_path)
+
         label_file = open(label_path,"r")
         label_read_line = label_file.readlines()
         label_file.close()
