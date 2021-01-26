@@ -14,7 +14,7 @@ For example,
 ## How to use
 ### Requirements
 - numpy
-- OpenCV  
+- PILLOW  
 
 You can make same environment with anaconda environment.  
 - `conda create -n Yolo-to-COCO python=3.8`  
