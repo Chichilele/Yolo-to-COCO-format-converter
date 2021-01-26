@@ -86,8 +86,7 @@ def get_args():
 
 if __name__ == '__main__':
     opt = get_args()
-    output_name = opt.output
-    output_path = 'output/' + output_name + '.json'
+    output_path = opt.output
     classes = get_objects(opt.objects)
     print(classes)
 
