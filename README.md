@@ -1,4 +1,4 @@
-# Yolo-to-COCO-format-converter
+# yolo2coco
 
 When you use **Yolo-model**, you might create annotation labels with [Yolo-mark](https://github.com/AlexeyAB/Yolo_mark).  
 For example,  
@@ -13,18 +13,18 @@ For example,
 
 ## How to use
 ### Requirements
+- python 3.8
+- conda or pip
 - numpy
 - PILLOW  
 
-You can make same environment with anaconda environment.  
-- `conda create -n Yolo-to-COCO python=3.8`  
-- `conda activate Yolo-to-COCO`  
-- `pip install numpy`  
-- `pip install PILLOW`  
+You can make same environment with anaconda environment (works on pip too).  
+- `conda create -n yolo2coco python=3.8 numpy PILLOW`  
+- `conda activate yolo2coco`
 
 Just clone this repository.  
-- `git clone https://github.com/Chichilele/Yolo-to-COCO-format-converter.git`  
-- `cd Yolo-to-COCO-format-converter`  
+- `git clone https://github.com/Chichilele/yolo2coco.git`  
+- `cd yolo2coco`  
 
 ### It will be easy to understand if you refer to the tutorial folder.  
 
