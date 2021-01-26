@@ -97,7 +97,7 @@ if __name__ == '__main__':
     
     for index, label in enumerate(classes):
         ann = {
-            "supercategory": "Disinfect_5obj",
+            "supercategory": "supercategory",
             "id": index + 1,  # Index starts with '1' .
             "name": label
         }
