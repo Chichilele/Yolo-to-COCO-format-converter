@@ -51,10 +51,10 @@ def images_annotations_info(opt):
             width = float(label_line.split()[3])
             height = float(label_line.split()[4])
 
-            int_x_center = int(h*x_center)
-            int_y_center = int(w*y_center)
-            int_width = int(h*width)
-            int_height = int(w*height)
+            int_x_center = int(w*x_center)
+            int_y_center = int(h*y_center)
+            int_width = int(w*width)
+            int_height = int(h*height)
 
             min_x = int_x_center-int_width/2
             min_y = int_y_center-int_height/2
