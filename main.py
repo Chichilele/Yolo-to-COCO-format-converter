@@ -1,5 +1,5 @@
 from create_annotations import *
-import cv2
+import PIL
 import argparse
 import json
 import numpy as np
@@ -39,15 +39,13 @@ def images_annotations_info(opt):
             print("Processing " + str(image_id) + " ...")
 
         line = line.replace('\n', '')
-        img_file = cv2.imread(line)
+        w, h = Image.open(line).size
 
         # read a label file
         label_path = line[:-3]+"txt"
         label_file = open(label_path,"r")
         label_read_line = label_file.readlines()
         label_file.close()
-
-        h, w, _ = img_file.shape
 
         # Create image annotation
         image = create_image_annotation(line, w, h, image_id)
@@ -63,10 +61,10 @@ def images_annotations_info(opt):
             width = float(label_line.split()[3])
             height = float(label_line.split()[4])
 
-            int_x_center = int(img_file.shape[1]*x_center)
-            int_y_center = int(img_file.shape[0]*y_center)
-            int_width = int(img_file.shape[1]*width)
-            int_height = int(img_file.shape[0]*height)
+            int_x_center = int(h*x_center)
+            int_y_center = int(w*y_center)
+            int_width = int(h*width)
+            int_height = int(w*height)
 
             min_x = int_x_center-int_width/2
             min_y = int_y_center-int_height/2
