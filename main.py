@@ -104,7 +104,7 @@ if __name__ == '__main__':
             "id": index + 1,  # Index starts with '1' .
             "name": label
         }
-       coco_format['categories'].append(ann)
+        coco_format['categories'].append(ann)
     
     with open(output_path, 'w') as outfile:
         json.dump(coco_format, outfile)
